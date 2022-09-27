@@ -7,8 +7,8 @@ import Videos from './Videos';
 import { APIFetch } from '../utils/APIFetch';
 
 const Feed = () => {
-  const [videos, setVideos] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [videos, setVideos] = useState([]);
 
   useEffect(() => {
     APIFetch(`search?part=snippet&q=${selectedCategory}`)
@@ -24,7 +24,7 @@ const Feed = () => {
         />
       </section>
 
-      <section style={{overflowY: "auto", height: "100vh", flex: 2 }}>
+      <section style={{height: "100vh"}}>
         <Videos videos={videos}/>
       </section>
     </main>
