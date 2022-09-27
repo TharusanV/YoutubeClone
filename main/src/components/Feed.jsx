@@ -7,7 +7,7 @@ import Videos from './Videos';
 import { APIFetch } from '../utils/APIFetch';
 
 const Feed = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState('New');
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
@@ -17,6 +17,7 @@ const Feed = () => {
 
   return (
     <main style={{ flexDirection: { style: 'column', md: 'row'}}}>
+      
       <section style={{height: { style: 'auto', md: '100vh'}}}>
         <VideoCategories
           selectedCategory={selectedCategory}

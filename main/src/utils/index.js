@@ -14,10 +14,10 @@ export const sidebarCategories = [
 ];
 
 export const videoCategories = [
-  {name: 'All'}, 
+  {name: 'New'}, 
   {name: 'Gaming'}, 
   {name: 'Music'}, 
   {name: 'Podcasts'}, 
   {name: 'League of Legends'}, 
-  {name: 'Recently Uploaded'}
+  {name: 'Premier League'}, 
 ];
