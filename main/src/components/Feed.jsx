@@ -16,7 +16,7 @@ const Feed = () => {
   }, [selectedCategory]);
 
   return (
-    <main style={{ flexDirection: { style: 'column', md: 'row'}}}>
+    <main style={{flexDirection: { style: 'column', md: 'row'}}}>
       
       <section style={{height: { style: 'auto', md: '100vh'}}}>
         <VideoCategories
@@ -25,7 +25,7 @@ const Feed = () => {
         />
       </section>
 
-      <section style={{height: "100vh"}}>
+      <section style={{height: "100vh", marginLeft: '80px', marginTop: '130px'}}>
         <Videos videos={videos}/>
       </section>
     </main>
