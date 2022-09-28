@@ -17,7 +17,7 @@ Not Yet (Soon I hope)
 	8) Hiding API Key - N (On the Free version but will still be good to learn)
 	9) Deploying to a server - N 
 	
-**Problems Face (Date - 28/09/2022): **
+**Problems Face (Date - 28/09/2022):**
 	1) Certain texts such as the nation and the links are underlined even using the 'textDecloration: none' style. Fixed: X
 	2) When using the API to get the title of videos some include symbols no idea why. Fixed: X
 	3) Using the video category section on the feed the API only selects video with the name 
@@ -25,6 +25,7 @@ Not Yet (Soon I hope)
 	4) Image sizing of video thumbnails. Should be easy but nothing is 'easy' with programming sometimes. Fixed X
 
 **Current Preview (Date - 28/09/2022)**:
+![image](https://user-images.githubusercontent.com/108695481/192883830-b0b634b3-d2c0-45c1-bc78-fbe6345b2f8e.png)
 
 
 
