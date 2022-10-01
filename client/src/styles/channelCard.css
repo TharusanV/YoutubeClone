@@ -1,0 +1,20 @@
+.channel-card-main-div{
+  position: relative;
+  justify-content: center;
+  align-items: center; 
+  margin-bottom: 40px;
+}
+
+.channel-profile-icon{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+
+.channel-profile-title{
+  margin: 0;
+  display: inline;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}

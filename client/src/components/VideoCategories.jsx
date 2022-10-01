@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/videocategory.css';
+import '../styles/videoCategory.css';
 import { videoCategories } from '../utils';
 
 const VideoCategories = ({selectedCategory, setSelectedCategory}) => {
