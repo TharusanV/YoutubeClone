@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 const ChannelCard = ({channelDetail}) => {
   return (
     <div style={{position: 'relative', justifyContent: 'center', alignItems: 'center', marginBottom: '40px'}}>

@@ -2,7 +2,8 @@ import VideoCard from './VideoCard'
 import ChannelCard from './ChannelCard'
 
 const Videos = ({videos}) => {
-  
+  if(!videos?.length) return 'Loading...';
+
   return (
     <div direction="row" 
     style={{backgroundColor: '#F8F8F8', flexWrap:"wrap", justifyContent:"center", alignItems:"start", paddingLeft: '5px', marginRight: '16px', paddingTop: '10px'}}>

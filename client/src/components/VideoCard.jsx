@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link } from 'react-router-dom'
 
+
 const VideoCard = ({video : {id: {videoId}, snippet }}) => {
   return (
     <div className='VideoCard' style={{width: '100%', marginBottom: '40px', justifyContent: 'center'}}>

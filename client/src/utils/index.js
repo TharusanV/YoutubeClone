@@ -4,7 +4,6 @@ import SubscriptionIcon from '../assets/subscriptions.svg'
 import LibraryIcon from '../assets/library.svg'
 import HistoryIcon from '../assets/history.svg'
 
-
 export const sidebarCategories = [
   {name:"Home", icon: HomeIcon},
   {name:"Explore", icon: ExploreIcon},

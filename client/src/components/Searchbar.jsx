@@ -6,11 +6,11 @@ const Searchbar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     e.preventDefault(); //Forms reload the page we dont want that to happen when something is searched
     if(searchTerm){
       navigate(`/search/${searchTerm}`);
-      setSearchTerm('');
+      
     }
   }
 
