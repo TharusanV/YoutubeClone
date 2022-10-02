@@ -25,7 +25,7 @@ const Feed = () => {
         />
       </section>
 
-      <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
+      <Stack sx={{ flexDirection: { sx: "column", md: "row" }, ml: '80px', mt: '115px'}}>
         <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
           <Videos videos={videos} />
         </Box>

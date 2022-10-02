@@ -27,7 +27,7 @@ const ChannelPage = () => {
 
     <Box minHeight="95vh">
       <Box>
-        <div style={{height:'300px', backgroundColor: 'red', zIndex: 10,}}>
+        <div style={{height:'300px', backgroundColor: 'red', zIndex: 10}}>
           <ChannelCard channelDetail={channelDetail}/>
         </div>
       </Box>

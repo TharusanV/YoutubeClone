@@ -15,8 +15,8 @@ const SearchFeed = () => {
   }, [searchTerm]);
 
   return (
-    <Box p={2} minHeight="95vh">
-      <Box display="flex">
+    <Box p={2} minHeight="95vh" style={{backgroundColor: 'rgb(248,248,248)'}}>
+      <Box display="flex" mt={10}>
         <Box sx={{ mr: { sm: '100px' } }}/>
         {<Videos videos={videos} />}
       </Box>

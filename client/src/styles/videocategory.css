@@ -38,3 +38,10 @@
   cursor: pointer;
   background-color: rgb(225,225,225);;
 }
+
+
+@media(max-width: 576px){
+  .categories-nav{
+    left: 0;
+  }
+}
