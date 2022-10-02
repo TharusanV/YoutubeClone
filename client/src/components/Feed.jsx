@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import VideoCategories from './VideoCategories';
 import Videos from './Videos';
 import { Box, Stack} from "@mui/material";
-
+import Sidebar from './Sidebar';
+import '../styles/sidebar.css'
 
 import { APIFetch } from '../utils/APIFetch';
 
@@ -17,7 +18,9 @@ const Feed = () => {
   }, [selectedCategory]);
 
   return (
-    <main>  
+    <main>
+      <Sidebar/>
+
       <section>
         <VideoCategories
           selectedCategory={selectedCategory}

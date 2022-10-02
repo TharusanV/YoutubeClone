@@ -7,7 +7,6 @@ function App() {
     <BrowserRouter>
       <div style={{ backgroundColor: '#F8F8F8', height: '100vh', width: '100%' }}>
         <Navbar />
-        <Sidebar/>
         <Routes>
           <Route exact path='/' element={<Feed />} />
           <Route path='/video/:id' element={<VideoPage />} />

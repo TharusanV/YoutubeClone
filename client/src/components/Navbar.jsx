@@ -10,11 +10,16 @@ import SettingsIcon from '../assets/settings.svg'
 const Navbar = () => {
   return (
     <header className='header'>
-      <Link to="/" className='left-section'>
+      <div className='left-section'>
         <img className='hamburger-menu' src={HamburgerMenuIcon} alt="Hamburger Menu Icon"/>
-        <img className='youtube-logo' src={YTLogo} alt="YT Logo"/>
-        <div className='nation'>GB</div>
-      </Link>
+        <Link to="/" >
+          <div style={{display: 'flex', flexWrap: 'nowrap'}}>
+            <img className='youtube-logo' src={YTLogo} alt="YT Logo"/>
+            <div className='nation'>GB</div>
+          </div>
+        </Link>
+      </div>
+
 
       <Searchbar />
       

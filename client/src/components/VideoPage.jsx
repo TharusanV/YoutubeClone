@@ -27,10 +27,10 @@ const VideoPage = () => {
   if(!videoDetail?.snippet) return 'Loading'; 
   
   return (
-    <Box minHeight="95vh">
+    <Box minHeight="95vh" >
       <Stack direction={{ xs: "column", md: "row" }}>
         <Box flex={1}>
-          <Box sx={{ width: "100%", position: "sticky", top: "86px" }}>
+          <Box sx={{ width: "100%", position: "sticky", top: "86px" }} ml={1} mt={10}>
             <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} className="react-player" controls />
             <Typography variant="h5" fontWeight="bold" p={2}>{videoDetail.snippet.title}</Typography>
             <Stack direction="row" justifyContent="space-between" py={1} px={2} >
@@ -44,7 +44,7 @@ const VideoPage = () => {
             </Stack>
           </Box>
         </Box>
-        <Box px={2} py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center" >
+        <Box px={2} py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center" style={{marginTop: '78px'}}>
           <Videos videos={videos} direction="column" />
         </Box>
       </Stack>
