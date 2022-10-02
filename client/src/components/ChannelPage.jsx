@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import Videos from "./Videos"
 import ChannelCard from "./ChannelCard"
 import { APIFetch } from "../utils/APIFetch"
-import '../styles/channelPage.css'
+import { Box } from "@mui/material"
 
 const ChannelPage = () => {  
   const [channelDetail, setChannelDetail] = useState(null);
@@ -24,21 +24,19 @@ const ChannelPage = () => {
 
 
   return (
-    <div className="channel-page-main-div">
-      <div>
-        <div className="channel-page-header-div">
-          <div className="channel-page-profile-card-div">
-            <ChannelCard channelDetail={channelDetail} />
-          </div>
+
+    <Box minHeight="95vh">
+      <Box>
+        <div style={{height:'300px', backgroundColor: 'red', zIndex: 10,}}>
+          <ChannelCard channelDetail={channelDetail}/>
         </div>
-      </div>
-      
-      <div>
-        <div className="channel-page-video-section-div">
-          <Videos videos={videos} />
-        </div>
-      </div>
-    </div>
+      </Box>
+      <Box p={2} display="flex">
+      <Box sx={{ mr: { sm: '100px' } }}/>
+        <Videos videos={videos} />
+      </Box>
+    </Box>
+    
   )
 }
 

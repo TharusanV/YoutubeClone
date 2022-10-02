@@ -1,23 +1,24 @@
 import React from 'react'
 import {Link } from 'react-router-dom'
-
+import { Typography, Card, CardContent, CardMedia } from "@mui/material";
 
 const VideoCard = ({video : {id: {videoId}, snippet }}) => {
   return (
-    <div className='VideoCard' style={{width: '100%', marginBottom: '40px', justifyContent: 'center'}}>
-      <Link to={`/video/${videoId}`}>
-        <img src={snippet?.thumbnails?.medium?.url} alt={snippet?.title} style={{ width: '100%', height: '180px' }} />
+    <Card sx={{ width: { xs: '100%', sm: '358px', md: "320px", }, boxShadow: "none", borderRadius: 0 }}>
+    <Link to={videoId ? `/video/${videoId}` : `/video/cV2gBU6hKfY` }>
+      <CardMedia image={snippet?.thumbnails?.high?.url} alt={snippet?.title} 
+        sx={{ width: { xs: '100%', sm: '358px'}, height: 180 }} 
+      />
+    </Link>
+    <CardContent sx={{ height: '106px' }}>
+      <Link to={`/video/${videoId}`} >
+        <Typography variant="subtitle1" fontWeight="bold">{snippet?.title.slice(0, 60)}</Typography>
       </Link>
-
-      <div style={{ width: '100%', height: '100px'}}>
-        <Link to={`/video/${videoId}`}>
-          <p style={{margin: 0, color: 'black', fontWeight: 'bold', height: '42px', fontFamily: 'Arial'}}> {snippet?.title.slice(0,60)}</p>
-        </Link>
-        <Link to={`/channel/${snippet?.channelId}`}>
-          <p style={{margin: 0, fontWeight: 'bold', fontSize: '10px', color: 'grey', fontFamily: 'Arial'}}> {snippet?.channelTitle}</p>
-        </Link>
-      </div>
-    </div>
+      <Link to={`/channel/${snippet?.channelId}`} >
+        <Typography variant="subtitle2" color="gray">{snippet?.channelTitle}</Typography>
+      </Link>
+    </CardContent>
+  </Card>
   )
 }
 

@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 import ReactPlayer from 'react-player' 
 import Videos from './Videos'
 import { APIFetch } from '../utils/APIFetch'
-import '../styles/videoPage.css'
+import { Typography, Box, Stack } from "@mui/material";
 //ReactPlayer - Accepts URL's
 
 const VideoPage = () => {
@@ -27,33 +27,28 @@ const VideoPage = () => {
   if(!videoDetail?.snippet) return 'Loading'; 
   
   return (
-    <div style={{minHeight: "100vh", position: 'relative', top: '80px', backgroundColor: 'rgb(248,248,248)'}}>
-      <div style={{direction: {xs: 'column', md: 'row'}, display: 'flex', justifyContent: 'center'}}>
-        <div style={{display: 'flex'}}>
-          <div style={{sx: {width: '100%', position: 'sticky'}}}>
-            <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} controls/>
-            <p style={{display: 'inline', fontWeight: 'bold', fontSize: '20px'}}>{videoDetail.snippet.title}</p>
-            <div style={{direction: 'row', justifyContent:'space-between'}}>
+    <Box minHeight="95vh">
+      <Stack direction={{ xs: "column", md: "row" }}>
+        <Box flex={1}>
+          <Box sx={{ width: "100%", position: "sticky", top: "86px" }}>
+            <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} className="react-player" controls />
+            <Typography variant="h5" fontWeight="bold" p={2}>{videoDetail.snippet.title}</Typography>
+            <Stack direction="row" justifyContent="space-between" py={1} px={2} >
               <Link to={`/channel/${videoDetail.snippet.channelId}`}>
-                <p style={{display: 'inline', fontWeight: 'bold', fontSize: '20px'}}>{videoDetail.snippet.channelTitle}</p>
+                <Typography variant={{ sm: "subtitle1", md: 'h6' }}>{videoDetail.snippet.channelTitle}</Typography>
               </Link>
-
-              <div style={{direction:"row", display: 'flex', justifyContent: 'end'}}>
-                <p style={{display: 'inline', margin: 0, paddingRight: '100px'}}>
-                  {parseInt(videoDetail.statistics.viewCount).toLocaleString()} views
-                </p>
-                <p style={{display: 'inline', margin: 0}}>
-                  {parseInt(videoDetail.statistics.likeCount).toLocaleString()} likes
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style={{display: 'inline-flex', margin: 'right', width: '350px'}}>
-          <Videos videos={videos}/>
-        </div>
-      </div>
-    </div>
+              <Stack direction="row" gap="20px" alignItems="center">
+                <Typography variant="body1">{parseInt(videoDetail.statistics.viewCount).toLocaleString()} views</Typography>
+                <Typography variant="body1">{parseInt(videoDetail.statistics.likeCount).toLocaleString()} likes</Typography>
+              </Stack>
+            </Stack>
+          </Box>
+        </Box>
+        <Box px={2} py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center" >
+          <Videos videos={videos} direction="column" />
+        </Box>
+      </Stack>
+    </Box>
   )
 }
 

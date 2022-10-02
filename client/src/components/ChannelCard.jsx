@@ -1,20 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../styles/channelCard.css'
+import { Box, CardContent, CardMedia, Typography } from '@mui/material';
 
 const ChannelCard = ({channelDetail}) => {
   return (
-    <div className='channel-card-main-div'>
+    <Box sx={{
+        borderRadius: '20px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: { xs: '356px', md: '320px' },
+        height: '326px',
+        margin: 'auto'
+      }}
+    >
       <Link to={`/channel/${channelDetail?.id?.channelId}`}>
-        <div>
-          <img className='channel-profile-icon' src={channelDetail?.snippet?.thumbnails?.high?.url} alt={channelDetail?.snippet?.title} />
-        </div>
-
-        <p className='channel-profile-title'>
-          {channelDetail?.snippet?.title}
-        </p>
+        <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center'}}>
+          <CardMedia image={channelDetail?.snippet?.thumbnails?.high?.url} alt={channelDetail?.snippet?.title} 
+          sx={{ borderRadius: '50%', height: '180px', width: '180px', mb: 2, border: '1px solid black' }}/>
+        
+          <Typography variant="h6">{channelDetail?.snippet?.title}{' '}</Typography>
+        </CardContent>
       </Link>
-    </div>
+    </Box>
     
   )
 }

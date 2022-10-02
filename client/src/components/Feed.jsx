@@ -1,9 +1,9 @@
 import React from 'react'
-import '../styles/feed.css';
 import { useEffect, useState } from 'react';
 import VideoCategories from './VideoCategories';
 import Videos from './Videos';
-import Sidebar from './Sidebar';
+import { Box, Stack} from "@mui/material";
+
 
 import { APIFetch } from '../utils/APIFetch';
 
@@ -17,26 +17,20 @@ const Feed = () => {
   }, [selectedCategory]);
 
   return (
-    <div>
-      <Sidebar />
+    <main>  
+      <section>
+        <VideoCategories
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
+      </section>
 
-      <main style={{flexDirection: { style: 'column', md: 'row'}}}>
-      
-        <section style={{height: { style: 'auto', md: '100vh'}}}>
-          <VideoCategories
-            selectedCategory={selectedCategory}
-            setSelectedCategory={setSelectedCategory}
-          />
-        </section>
-
-        <section style={{backgroundColor: '#F8F8F8', height: "100vh", position: 'relative', left: '70px', top: '110px'}}>
-          <Videos videos={videos}/>
-        </section>
-      </main>
-
-
-    </div>
-
+      <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
+        <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
+          <Videos videos={videos} />
+        </Box>
+      </Stack>
+    </main>
   )
 }
 
